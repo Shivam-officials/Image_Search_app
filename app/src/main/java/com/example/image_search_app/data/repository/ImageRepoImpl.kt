@@ -15,7 +15,7 @@ class ImageRepoImpl @Inject constructor(
     private val mapper: ImageDTOtoImageMapper
 ) : ImageRepository {
     override fun getImages(q: String): Pager<Int, Image> {
-        return Pager(
+        return Pager<Int, Image>(
             config = PagingConfig(
                 initialLoadSize = 10,
                 prefetchDistance = 1,
