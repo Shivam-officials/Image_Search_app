@@ -1,11 +1,13 @@
 package com.example.image_search_app.data.pagingSource
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.image_search_app.data.Mappers.ImageDTOtoImageMapper
 import com.example.image_search_app.data.Mappers.mapAll
 import com.example.image_search_app.data.remote.ApiService
 import com.example.image_search_app.domain.model.Image
+import kotlinx.coroutines.delay
 
 class ImagePagingSource(
     private val apiService: ApiService,
@@ -42,7 +44,8 @@ class ImagePagingSource(
         // call the data
         return try {
             val images = apiService.getImages(q = q, page = page) // Fetch images for the given page
-
+            Log.d ("Taggg",images.toString())
+//            delay(3000)
             LoadResult.Page(
                 data = mapper.mapAll(images.hits), // Convert API data to UI model
 

@@ -17,10 +17,10 @@ class ImageRepoImpl @Inject constructor(
     override fun getImages(q: String): Pager<Int, Image> {
         return Pager<Int, Image>(
             config = PagingConfig(
-                initialLoadSize = 10,
-                prefetchDistance = 1,
+                initialLoadSize = 20,
+                prefetchDistance = 5,
                 pageSize = 10,
-                enablePlaceholders = true,
+                enablePlaceholders = false,
             ),
             pagingSourceFactory = {
                 ImagePagingSource(
