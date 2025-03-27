@@ -37,7 +37,6 @@ class ImagePagingSource(
     // this is responsible for fetching data when needed.Whenever the user scrolls
     // or refreshes, the Paging library calls load() to get the next set of data.
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Image> {
-//        TODO("Not yet implemented")
         val page = params.key ?: 1 //page number
         val pageSize = params.loadSize
 

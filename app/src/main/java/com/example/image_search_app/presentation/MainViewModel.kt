@@ -29,7 +29,6 @@ class MainViewModel @Inject constructor(
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     val images = _query
-        //todo why the filter is letting empty string of flow emit pass through it
         .filter { it.isNotBlank()  } // Ignore empty or blank queries
         .debounce { 1000 } // Wait for 1 second before processing to avoid rapid API calls
         .flatMapLatest { _query ->

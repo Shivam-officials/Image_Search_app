@@ -75,7 +75,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-//todo what is causing the mainContent flow to recompose bcz no state observering has been change to trigger recompose so what is making it trigger :flow?
 
 @Composable
 fun MainContent(viewmodel: MainViewModel, modifier: Modifier = Modifier) {
